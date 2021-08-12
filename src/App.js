@@ -8,7 +8,8 @@ import {
 } from 'react-router-dom'
 import { apiEndpoint } from './prismic-configuration'
 import { Help, Preview, NotFound } from './pages'
-
+import Page from './pages/Page'
+import MultipleChoice from './pages/MultipleChoice'
 /**
  * Main application componenet
  */
@@ -26,6 +27,8 @@ const App = (props) => {
           <Redirect exact from='/' to='/help' />
           <Route exact path='/help' component={Help} />
           <Route exact path='/preview' component={Preview} />
+          <Route exact path='/page/:uid' component={Page} />
+          <Route exact path='/multiple-choice/:uid' component={MultipleChoice} />
           <Route component={NotFound} />
         </Switch>
       </BrowserRouter>
